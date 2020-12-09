@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<BorderPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+   <top>
+      <MenuBar fx:id="menuBar" BorderPane.alignment="CENTER">
+        <menus>
+          <Menu fx:id="fileMenu" mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem fx:id="openImage" mnemonicParsing="false" onAction="#openImageOnClicked" text="Open Image..." />
+              <MenuItem fx:id="save" mnemonicParsing="false" onAction="#saveImg" text="Save" />
+              <MenuItem fx:id="saveAs" mnemonicParsing="false"  onAction="#saveAs" text="Save As..." />
+            </items>
+          </Menu>
+          <Menu fx:id="editMenu" mnemonicParsing="false" text="Edit">
+            <items>
+	           <Menu fx:id="color" mnemonicParsing="false" text="Color">
+	            <items>
+	              <MenuItem fx:id="grayscale" mnemonicParsing="false" onAction="#grayScale" text="Grayscale" />
+	            </items>
+	          </Menu>
+              <Menu fx:id="filtering" mnemonicParsing="false" text="Filtering">
+              <items>
+              	<MenuItem fx:id="convolution" mnemonicParsing="false" onAction="#dialogConvolution" text="Convolution"  />
+              	<MenuItem fx:id="averaging" mnemonicParsing="false" onAction="#dialogAveraging" text="Averaging"  />
+              	<MenuItem fx:id="gaussianBlur" mnemonicParsing="false" onAction="#dialogGaussianBlur" text="Gaussian"  />
+              	<MenuItem fx:id="median" mnemonicParsing="false" onAction="#dialogMedianBlur" text="Median"  />
+              	<MenuItem fx:id="bilateral" mnemonicParsing="false" onAction="#dialogBilateral" text="Bilateral"  />
+              	<MenuItem fx:id="laplacian" mnemonicParsing="false" onAction="#dialogLaplacian" text="Laplacian"  />
+              	<MenuItem fx:id="conservative" mnemonicParsing="false" onAction="#dialogConservative" text="Conservative"  />
+              	<MenuItem fx:id="minMax" mnemonicParsing="false" onAction="#dialogMinMax" text="MinMax"  />
+              	<MenuItem fx:id="snn" mnemonicParsing="false" onAction="#snn" text="SNN"  />
+              </items>
+              </Menu>
+              <Menu fx:id="noise" mnemonicParsing="false" text="Noise">
+              <items>
+              	<MenuItem fx:id="gaussianNoise" mnemonicParsing="false" onAction="#gaussianNoise" text="Gaussian"  />
+              	<MenuItem fx:id="saltPepper" mnemonicParsing="false" onAction="#dialogSaltPepper" text="Salt and Pepper"  />
+              	<MenuItem fx:id="speckle" mnemonicParsing="false" onAction="#speckle" text="Speckle"  />
+              </items>
+              </Menu>
+              <Menu fx:id="morphology" mnemonicParsing="false" text="Morphology">
+              	<MenuItem fx:id="erosion" mnemonicParsing="false" onAction="#erodeMorphSetting" text="Erosion"  />
+              	<MenuItem fx:id="dilation" mnemonicParsing="false" onAction="#dilateMorphSetting" text="Dilation"  />
+              	<MenuItem fx:id="opening" mnemonicParsing="false" onAction="#openingMorphSetting" text="Opening"  />
+              	<MenuItem fx:id="closing" mnemonicParsing="false" onAction="#closingMorphSetting" text="Closing"  />
+              </Menu>
+              <Menu fx:id="edgeDetect" mnemonicParsing="false" text="Edge Detection">
+              	<MenuItem fx:id="canny" mnemonicParsing="false" onAction="#cannyEdgeSetting" text="Canny"  />
+              	<MenuItem fx:id="sobel" mnemonicParsing="false" onAction="#sobel" text="Sobel Derivative"  />
+              	<MenuItem fx:id="prewitt" mnemonicParsing="false" onAction="#prewitt" text="Prewitt"  />
+              	<MenuItem fx:id="sobel" mnemonicParsing="false" onAction="#robert" text="Robert"  />
+              </Menu>
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+   	  <ImageView fx:id="imageView" BorderPane.alignment="CENTER" />   
+   </center>
+   <right>
+   </right>
+</BorderPane>
